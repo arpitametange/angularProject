@@ -1,0 +1,26 @@
+<p></p>
+<p></p>
+<div class="container" id="countries">
+    <h3>Select Country & State !</h3>
+    <div  class="btn btn-danger dropdown-toggle ">
+    <label for="country">Select a country:</label>
+    <select id="country" (change)="onCountryChange($event.target.value)">
+      <option value="">-- Select Country --</option>
+      <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+    </select>
+  </div>
+  
+  <div *ngIf="selectedCountry" class="btn btn-danger dropdown-toggle" id="states">
+    <label>States of {{ selectedCountry }}</label> 
+    <select id="state" (change)="onStateChange($event.target.value)">
+      <option value="">-- Select State --</option>
+      <option *ngFor="let state of getStates(selectedCountry)" [value]="state">{{ state }}</option>
+    </select>
+
+</div>
+
+
+    
+  </div>
+  
+  <!-- <button type="button" class="btn btn-primary">Primary</button> -->

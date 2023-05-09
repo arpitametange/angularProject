@@ -1,0 +1,9 @@
+<p>pwd works!</p>
+<h1>password</h1>
+<div>Enter the length<input (input)="enterthelength($event.target.value)"></div>
+<div>select symbols <input type="checkbox" (change)="onChangeSymbol()"></div>
+<div>select letters <input type="checkbox" (change)="onChangeLetters()"></div>
+<div>select numbers <input type="checkbox" (change)="onChangeNumbers()"></div>
+<div><button (click)="OnButtonClick()">Generate password</button></div>
+<div>your password <input [value]="password"></div>
+

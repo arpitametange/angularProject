@@ -1,0 +1,40 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Foldit:wght@300&family=Instrument+Serif&family=Roboto:wght@500&display=swap" rel="stylesheet">
+<p>structural-directives-assi works!</p>
+
+
+<!-- <div *ngIf="showt; else elseBlock"><input type="checkbox" (change)="fum($event)"  >
+    <input type="checkbox" name="" id="">
+<div>this is the true content</div>
+</div>
+<ng-template #elseBlock>
+    <h3 class="container">Checkbox</h3>
+</ng-template> -->
+
+
+<div class="container">
+<label >
+    <input type="checkbox" [(ngModel)]="showto"/> check me!
+ </label>
+ <div class="col-md-4  " *ngIf="showto">
+    <div>After checking the checkbox</div>
+    <h2  class="container">Top three courses</h2>
+<ol class="container" *ngFor="let g of array let i=index" style="list-style: none;">
+<li *ngIf="i<3" [ngClass]="{
+   'text-danger':g.course=='Angular',
+   'text-success':g.course=='React',
+   'text-primary':g.course=='Java'
+}">{{i+1}}. {{g.course}}</li>
+</ol>
+ </div>
+</div>
+
+
+
+
+
+
+
+
+

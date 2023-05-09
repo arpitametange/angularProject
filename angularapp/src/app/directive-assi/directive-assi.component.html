@@ -1,0 +1,45 @@
+<!-- <p>directive-assi works!</p> -->
+<h3 class="container text-info">
+Dropdown using ngSwitch
+</h3>
+<p></p>
+<div class="container bg-light dropdown" >
+  <div class="row">
+    <div class="col-md-4">
+
+     <ol  class="list-group list-inline  ">
+  <li ><h3 class="text-danger">Country: </h3><select class="form-control " (change)="get($event)">
+    <option  class="dropdown-item"  value="Country">Select Country</option>
+    <option  class="dropdown-item" value="India">India</option>
+    <option  class="dropdown-item" value="USA">USA</option>
+  </select></li>
+</ol>
+    </div>
+<div class="col-md-2" [ngSwitch]="selectedValue1">
+      <h3  class="text-success">States: </h3>
+      <select name="" id=""  *ngSwitchCase="'India'">
+        <option    class="text-info" value="Maharashtra">Maharashtra</option>
+           <option class="text-info" value="Goa">Goa</option> 
+           <option class="text-info" value="Manipur">Manipur</option>
+           <option class="text-info" value="Gujarat">Gujarat</option>
+           <option class="text-info" value="Punjab">Punjab</option>                           
+    </select>
+    <select name="" id="" *ngSwitchCase="'USA'">
+      <option    class="text-danger"   value="California">California</option>
+         <option class="text-danger"   value="Georgia">Georgia</option> 
+         <option class="text-danger"  value="Mississippi">Mississippi</option> 
+         <option class="text-danger"  value="Texas">Texas</option>                          
+  </select> 
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<!-- Example split danger button -->
+

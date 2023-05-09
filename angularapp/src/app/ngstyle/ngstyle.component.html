@@ -1,0 +1,12 @@
+<h1>ngstyle works!</h1>
+<div [ngStyle]="{'color':'red'}">
+    jfdkf
+</div>
+<div [ngStyle]="{'color': colorVal, 'background-color': '#ddd'}">
+    NgStyle example
+    </div>
+
+    <p [ngStyle]="{'color':'violet', 'font-size': 'larger', 'font-weight': 'bolder'}">Arpitaaa</p>
+    <div *ngFor="let t of array">
+        <p [ngClass]="{'text-success':t.name=='arpita'}">{{t.name}}</p>
+    </div>

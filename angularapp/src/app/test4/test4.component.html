@@ -1,0 +1,13 @@
+<p>test4 works!</p>
+<selector [nameInput]="namee" (childoutput)="create($event)"></selector>
+<p>{{sele}}</p>
+
+<input type="text" [(ngModel)]="sele">
+<h1>test4</h1>
+<ul *ngFor="let l of array">
+    <li [ngClass]="{
+        'text-success':l.name=='arpita',
+        'text-danger':l.name=='shravani'
+    }">
+{{l.name}}</li>
+</ul>

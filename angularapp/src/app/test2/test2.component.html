@@ -1,0 +1,5 @@
+<p>test2 works!</p>
+<!-- <app-test [childName]="name" [count]="userCount"></app-test> -->
+<app-test [childName]="name" [count]="userCount" (fromChild)="GetDataFromChild($event)"  (fromChild2)="create1($event)" (ouut)="shoudparent($event)">
+
+</app-test>
