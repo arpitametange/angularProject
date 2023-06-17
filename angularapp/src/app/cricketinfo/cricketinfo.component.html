@@ -1,0 +1,83 @@
+<h1 class="container" style="color: rgb(14, 244, 152); font-family: cursive;">cricBuzz</h1>
+<div class="my-7 container row   justify-content ">
+    <div class=" container col-md-3">
+        <img src="{{venue.imageUrl}}" alt="">
+    </div>
+<div class="col-md-3">
+<h3><strong>Match information</strong></h3>
+<ol>
+    <li>Match id: {{matchInfo.matchId}}</li>
+    <li *ngFor="let p of matchInfo.playersOfTheMatch "> Player of the match :{{p.name}}
+    </li>
+    <li>Series Name: {{matchInfo.series.name}}</li>
+    <li >Match Type: {{matchInfo.matchType}}</li>
+</ol>
+</div>
+<div class="col-md-6">
+<h3><strong>Venue information</strong></h3>
+<ol>
+   <li>City: {{venue.city}}</li>
+   <li>Country: {{venue.country}}</li>
+   <li>Ground: {{venue.ground}}</li>
+   <li>Curator: {{venue.curator}}</li>
+</ol>
+</div>
+</div>
+<div class=" shadow">
+<h2>Players details(Afghanistan U19)</h2>
+<table class="table table-striped">
+    <thead>
+       <tr class="thead"  style="justify-content: center;">
+        <th>Id</th>
+<th>Name</th>
+<th>NickName</th>
+<th>Batting Style</th>
+<th>Bowling Style</th>
+<th>Role</th>
+<th>Team Id</th>
+<th>Team Name</th>
+    </thead>
+        <tbody>
+           <ng-container *ngFor="let t1 of team1.playerDetails">
+           <tr>
+            <td>{{t1.id}}</td>
+            <td>{{t1.name}}</td>
+            <td>{{t1.nickName}}</td>
+            <td>{{t1.battingStyle}}</td>
+            <td>{{t1.bowlingStyle}}</td>
+            <td>{{t1.role}}</td>
+            <td>{{t1.teamId}}</td>
+            <td>{{t1.teamName}}</td>
+           </tr>
+       </ng-container>
+        </tbody>
+ </table>
+ </div>
+ <div class=" shadow">
+ <h2>Players details(United Arab Emirates U19)</h2>
+ <table class="table table-striped">
+<thead  >
+<tr style="justify-content: center;" class="thead">
+<th>Id</th>
+<th>Name</th>
+<th>NickName</th>
+<th>Batting Style</th>
+<th>Bowling Style</th>
+<th>Role</th>
+<th>Team Id</th>
+<th>Team Name</th>
+</thead>
+<tbody >
+    <tr *ngFor="let t2 of team2.playerDetails">
+    <td>{{t2.id}}</td>
+     <td>{{t2.name}}</td>
+     <td>{{t2.nickName}}</td>
+     <td>{{t2.battingStyle}}</td>
+     <td>{{t2.bowlingStyle}}</td>
+     <td>{{t2.role}}</td>
+     <td>{{t2.teamId}}</td>
+     <td>{{t2.teamName}}</td>
+    </tr>
+</tbody>
+ </table>
+</div>

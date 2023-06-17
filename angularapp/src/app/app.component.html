@@ -1,6 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
+  <h1 appCustom>
     Welcome to {{ title }}!
   </h1>
   <p></p>
@@ -29,11 +29,11 @@
 <selector></selector>
 <app-test4></app-test4>
 <app-databinding></app-databinding>
-<router-outlet></router-outlet>
+
 <app-password1></app-password1>
 <app-pwd></app-pwd>
 <app-ng-if></app-ng-if>
-<app-ngfor></app-ngfor>
+<!-- <app-ngfor></app-ngfor> -->
 <app-test></app-test>
 <p></p>
 <p></p>
@@ -54,3 +54,128 @@
 
 <app-ngstyle></app-ngstyle>
 <app-template-forms></app-template-forms>
+<!-- <app-template-fassi></app-template-fassi> -->
+<mat-slide-toggle>Toggle me!</mat-slide-toggle>
+<div matBadge="4" matBadgeOverlap="false" class="demo-section">Text with a badge</div>
+
+<div matBadge="4" matBadgeOverlap="false" class="demo-section">Text with a badge</div>
+
+<div matBadge="1" matBadgeSize="large" class="demo-section">Text with large badge</div>
+
+<div class="demo-section">
+Button with a badge on the left
+<button mat-raised-button color="primary"
+    matBadge="8" matBadgePosition="before" matBadgeColor="accent">
+  Action
+</button>
+</div>
+
+<div class="demo-section">
+  Button toggles badge visibility
+  <button mat-raised-button matBadge="7" [matBadgeHidden]="hidden" (click)="toggleBadgeVisibility()">
+      Hide
+  </button>
+</div>
+
+<div class="demo-section">
+Icon with a badge
+<mat-icon matBadge="15" matBadgeColor="warn">home</mat-icon>
+  <!-- Include text description of the icon's meaning for screen-readers -->
+  <span class="cdk-visually-hidden">
+    Example with a home icon with overlaid badge showing the number 15
+  </span>
+</div>
+
+<!-- <app-template-drivenform></app-template-drivenform> -->
+<!-- <app-ngforpractassi></app-ngforpractassi> -->
+<!-- <app-angular-material-try></app-angular-material-try> -->
+<!-- <app-reactive-form></app-reactive-form> -->
+<!-- <app-reactive-form></app-reactive-form> -->
+<!-- <app-reactive-form2></app-reactive-form2> -->
+<!-- <app-ngforpractassi></app-ngforpractassi> -->
+<!-- <app-bothform></app-bothform> -->
+<!-- <app-reactiveformassi></app-reactiveformassi> -->
+<app-service1></app-service1>
+<app-service2></app-service2>
+<input type="date" [(ngModel)]="age">
+
+<button class="btn btn-primary" (click)="ageCalculator()">Calculate Age</button>
+
+<p *ngIf="age">{{showAge}}</p>
+
+<button class="btn btn-success" (click)="getUserData()">GetUser Data</button>
+
+<!-- <app-ngfor></app-ngfor> -->
+<button (click)="gettoaast()">b4u</button>
+<app-post></app-post>
+<!-- <app-todo></app-todo> -->
+<!-- <app-dropdown-binding></app-dropdown-binding> -->
+<!-- <app-dropdown-binding2></app-dropdown-binding2> -->
+<!-- <app-rapidapi></app-rapidapi> -->
+<!-- <app-rapid-crickbuzz></app-rapid-crickbuzz> -->
+
+<!-- <app-cricketinfo></app-cricketinfo> -->
+
+<div style="text-align: center;">
+  <div class="row">
+    <div class="col-md-6">
+<app-comp1></app-comp1>
+</div>
+<div class="col-md-6">
+<app-comp2></app-comp2>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<app-comp3></app-comp3>
+</div>
+<div class="col-md-6">
+
+<app-comp4></app-comp4>
+</div>
+</div>
+</div>
+
+
+<nav>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a routerLinkActive="active myclass" routerLink="about-us" class="nav-link">About Us</a>
+    </li>
+    <li class="nav-item">
+      <a routerLinkActive="active myclass" routerLink="contact-us" class="nav-link">Contact Us</a>
+    </li>
+    <li class="nav-item"><a routerLinkActive="active myclass" routerLink="product" class="nav-link">Product</a></li>
+    <li class="nav-item"><a routerLinkActive="active myclass" routerLink="rxjs" class="nav-link">rxjs</a></li>
+
+<!-- <li  class="nav-item"><a  class="nav-link" routerLink="jumpsuit">jumpsuit</a></li>
+<li  class="nav-item"><a  class="nav-link" routerLink="bags">bags</a></li> -->
+<li  class="nav-item"><a class="nav-link" routerLink="womendress">womendress
+
+
+</a></li>
+<li class="nav-item"><a routerLinkActive="active myclass" routerLink="posts" class="nav-link">Posts</a></li>
+<li class="nav-item"><a routerLinkActive="active myclass" routerLink="pipe" class="nav-link">Pipe</a></li>
+
+</ul>
+
+</nav>
+
+
+<router-outlet></router-outlet>
+<!-- <div><ul><li><a routerLinkActive="active myclass" routerLink="addtocard" class="nav-link">add to card</a></li></ul></div> -->
+<!-- <router-outlet></router-outlet> -->
+
+<!-- <app-giphyapi></app-giphyapi> -->s
+<!-- <app-practiceform></app-practiceform> -->
+<!-- <app-search-api></app-search-api> -->
+<!-- <app-page-list></app-page-list> -->
+<!-- <app-addtocardlogin></app-addtocardlogin> -->
+<app-hooks [parentData]="data" *ngIf="isDestory">
+  <h1 #child>This is child content coming from parent component.</h1>  
+</app-hooks>
+  
+  <button (click)="changecolor()">Change color</button>
+  <button class="btn btn-danger" (click)="OnDestroy()">Destroy Hooks Component</button>
+
+  <!-- <app-randomuser></app-randomuser> -->

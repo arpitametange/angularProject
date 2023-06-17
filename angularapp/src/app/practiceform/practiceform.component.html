@@ -1,0 +1,22 @@
+<p>practiceform works!</p>
+<form (ngSubmit)="onSubmit(myform)" #myform="ngForm">
+<div class="row">
+<div class="form-group col-md-6">
+<label for="">username</label>
+<input type="text" required name="username" ngModel
+  id="username" class="form-control" #username="ngModel" >
+<small class="text-danger" *ngIf="!username.valid && username.touched">Please enter valid domain userName</small>
+</div>
+<div class="form-group col-md-6">
+    <label for="">enter email</label>
+    <input type="text" name="email" id="email" class="form-control" ngModel #email="ngModel" email required >
+    <small *ngIf="!email.valid && email.touched" class="text-danger">required field</small>
+</div>
+</div>
+<button type="submit" >Submit</button>
+
+</form>
+<div *ngIf="isSubm">
+   email: {{user.Email}}
+   username: {{user.userName}}
+</div>

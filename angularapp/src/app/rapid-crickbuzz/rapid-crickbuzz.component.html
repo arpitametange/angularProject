@@ -1,0 +1,25 @@
+<p>rapid-crickbuzz works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md">
+            <table class="table table-stripped">
+                <thead> 
+                    <th> Match Type </th>
+                    <th> Series Id </th>
+                    <th> Series Name </th>
+                    <th> Matches </th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let obj of matches">
+                        <td> {{obj.matchType}} </td>
+                    </tr>
+                        <tr *ngFor="let obj2 of matchAryy">
+                         <td> {{obj2.matchInfo}} </td>
+                        <td> {{obj.seriesName}} </td>
+                        <td> {{obj.matches}} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

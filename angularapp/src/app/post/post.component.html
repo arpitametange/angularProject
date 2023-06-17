@@ -1,0 +1,15 @@
+<p>post works!</p>
+<table class="container table table-striped">
+    <thead class="thead-dark">
+<th scope="col">User Id</th>
+<th scope="col">Title </th>
+<th scope="col">Id</th>
+<th scope="col">Body</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let g of arrray"><td>{{g.userId}}</td>
+            <td>{{g.title}}</td>
+            <td>{{g.id}}</td>
+        <td>{{g.body}}</td></tr>
+    </tbody>
+</table>

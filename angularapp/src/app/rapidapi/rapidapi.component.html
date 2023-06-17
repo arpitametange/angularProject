@@ -1,0 +1,24 @@
+<p>rapidapi works!</p>
+<p>{{matchInfo.matchId}}</p>
+<p>{{matchInfo.seriesId}}</p>
+<p>{{matchInfo.seriesName}}</p>
+<table class='my-4'>
+    <thead>
+        <th>Id</th>
+        <th>Title</th>
+</thead>
+    <tbody>
+        <tr *ngFor="let t2 of rapidArray ">
+        <td>{{t2.uuid}}</td>
+        <td>{{t2.title}}</td>
+    </tr> 
+    </tbody>
+</table>
+<table>
+    <thead><th>Exchange</th>
+    <th>Quote</th></thead>
+    <tbody> <tr  *ngFor="let quote of rapiquote">
+        <td>Exchange:{{quote.exchange}}</td>
+         <td>  Shortname:{{quote.shortname}}</td>
+    </tr></tbody>
+</table>

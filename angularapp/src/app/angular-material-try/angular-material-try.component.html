@@ -1,0 +1,53 @@
+<mat-vertical-stepper linear>
+  <mat-step label="shipping address" completed="true"><p>shipping address</p></mat-step>
+  <mat-step label="billing address" completed="false" optional><p>Billing adressss </p>
+  <div><button mat-button matStepperPrevious>back</button>
+    <button mat-button matStepperNext>next</button>
+  </div></mat-step>
+  <mat-step label="placing order" completed="false"><p>placing adred</p></mat-step>
+
+  
+
+</mat-vertical-stepper>
+<div><button color="primary" mat-button>click</button>
+  <button color="accent" mat-button>click</button>
+  <button color="warn" disableRipple mat-button>click</button>
+  <button  color="primary" mat-raised-button>raised</button>
+  <button  color="accent"mat-raised-button>raised</button>
+  <button  color="warn"mat-raised-button>raised</button>
+
+  <button mat-flat-button>flat</button>
+  <button mat-stroked-button>stronked</button>
+  <button mat-fab>click</button>
+  <button mat-icon-button>click</button>
+  <button mat-mini-fab>click</button>
+</div>
+<div><mat-button-toggle #toggleBtn checked disableRipple>Toggle</mat-button-toggle>
+  {{toggleBtn.checked}}
+  </div>
+
+  <div>
+   <mat-button-toggle-group #toggleGroup="matButtonToggleGroup" multiple>
+    <mat-button-toggle value="angular">angular</mat-button-toggle>
+    <mat-button-toggle value="react">react</mat-button-toggle>
+    <mat-button-toggle value="java">java</mat-button-toggle>
+
+   </mat-button-toggle-group>
+   ==> {{toggleGroup.value}}
+  </div>
+
+
+<div>
+  <input type="text">
+  <mat-icon>
+  error
+  </mat-icon>
+  <span class="material-icons">
+    account_circle
+    </span>
+</div>
+
+<div><span [matBadge]="noti" matBadgeColor="warn" matBadgeOverlap="false" [matBadgeHidden]="noti == 0" >notification</span></div>
+<div>==<span matBadge="5" matBadgePosition="below before" matBadgeSize="large">notification</span></div>
+<div>========<span matBadge="5" matBadgePosition="below after"  matBadgeSize="large">notification</span></div>
+<div>===========<span matBadge="5" matBadgePosition="above before" matBadgeSize="large">notification</span></div>

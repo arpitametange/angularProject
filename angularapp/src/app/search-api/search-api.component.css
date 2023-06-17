@@ -1,0 +1,16 @@
+input[type='text']{
+  width: 600px;
+  border: 2px solid black;
+   
+}
+
+.col{
+   padding: 100px;
+}
+
+.snippet{
+    padding-left: 500px;
+}
+th,td{
+    border: 1px solid black;
+}

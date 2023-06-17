@@ -4,7 +4,8 @@
        
         <div class="col-md-6 text-left rounded shadow py-5">
             <div> <h2>Simple Form</h2></div>
-            <form #myForm="ngForm" (ngSubmit)="OnSubmit(myForm)">
+            <form #myForm="ngForm" (ngSubmit)="OnSubmit(myForm)"  >
+                <div ngModelGroup="userDetail" #userDetails="ngModelGroup">
                 <div class="form-group">
                     <label for="username">UserName</label>
                      <input required type="text" class="form-control" id="username" name="username" ngModel
@@ -13,9 +14,32 @@
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input email required type="text" class="form-control" id="email" name="email" ngModel 
-                    placeholder="Enter email">
+                    placeholder="Enter email" pattern="^[a-zA-Z0-9_\.\+-]+@codemindtechnology\.com$" #email="ngModel">
+                    <small class="text-danger" *ngIf="!email.valid && email.touched">Please enter valid domain email</small>
+                </div>
+            </div>
+                <div class="form-group" *ngFor="let gender of genders">
+                    <input  type="radio" id="{{gender.id}}" name="gender" value="{{gender.value}}" class="custom-control-input" [ngModel]="defaultGenderValue">
+                    <label for="{{gender.id}}" class="custom-control-label">{{gender.value}}</label>
+                </div>
+                <div class="form-group">
+                    <label for="course">Select Course</label>
+                    <select name="course" class="form-control" id="course" [ngModel]="defaultCourse" >
+                        <option [value]="course" *ngFor="let course of courseArr" >
+                            {{course}}
+                        </option>
+                    </select>
+
                 </div>
                 <button type="submit" [disabled]="!myForm.valid" class="btn btn-success">Submit</button>
+                <div class="row justify-content-center" *ngIf="isSubmitted">
+                    <h2>Form Data</h2>
+                    <p>UserName: {{user.userName}}</p>
+                    <p>Email: {{user.email}}</p>
+                    <p>Course: {{user.course}}</p>
+                    <p>Gender: {{user.gender}}</p>
+
+                </div>
             </form>
         </div>
     </div>

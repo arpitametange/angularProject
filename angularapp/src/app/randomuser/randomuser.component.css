@@ -1,0 +1,22 @@
+.table-fixed{
+    width: 100%;
+    
+}
+.table-fixed thead th,.cls{
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    background: #3fa4bd;
+    color: rgb(11, 10, 10);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+th,tr,td,tbody,thead,table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+.hw{
+    height: 95px;
+
+}

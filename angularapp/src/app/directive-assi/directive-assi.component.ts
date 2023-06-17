@@ -21,4 +21,10 @@ get(value){
 console.log(value.target.value);
 this.selectedValue1=value.target.value
 }
+selectedvalue2:string
+get3(val): void{
+  console.log(val.target.value);
+
+  this.selectedvalue2=val.target.value
+}
 }

@@ -1,0 +1,96 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<p>template-fassi works!</p>
+<div class="container">
+    <div class="row justify-content-center">
+       
+        <div class="col-md-6 text-left rounded shadow py-5">
+<form #forms="ngForm" (ngSubmit)="funform(forms) " >
+  <div ngModelGroup="adressBoth" #address1="ngModelGroup" >
+
+    <div><h1 class="text-info">Registration form</h1></div>
+    <div class="form-row">
+      <div class="form-group col-md-7">
+        <label for="inputEmail4">Email</label>
+        <input email required type="text" class="form-control" pattern="^[a-zA-Z0-9_\.\+-]+@codemindtechnology\.com$" name="email" id="inputEmail4" ngModel #email="ngModel"><small *ngIf="!email.valid && email.touched" class="text-danger" > Please enter valid domain email!
+        </small>
+      </div>
+      <div class="form-group col-md-7">
+        <label for="inputPassword4">Password</label>
+        <input required  type="password" #password="ngModel" class="form-control" name="password" id="inputPassword4" ngModel>
+        <small class="text-danger" *ngIf="!password.valid && password.touched ">Enter valid password </small>
+      </div>
+    </div>
+    <div class="form-group ">
+      <label for="Address">Address</label>
+      <input type="text" required class="form-control" id="inputAddress" name="address"  placeholder="1234 Main St" ngModel>
+
+    </div>
+    <div class="form-group ">
+      <label for="Address2">Address 2</label>
+      <input required type="text" class="form-control"  id="Permanant Address" name="address2" placeholder="Apartment, studio, or floor" ngModel>
+      <!-- <small class="text-danger" *ngIf="!both.valid && both.touched " >required!</small> -->
+
+    </div>
+    <small class="text-danger" *ngIf="!address1.valid && address1.touched " >required field!</small>
+
+  
+    <div class="form-row ">
+      <div class="form-group col-md-6">
+        <label for="City">City</label>
+        <input required type="text" class="form-control" #city="ngModel" name="city" id="inputCity" ngModel>
+        <small class="text-danger" *ngIf="!city.valid && city.touched">required!</small>
+      </div>
+      <div class="form-group col-md-4 py-2">
+        <label for="State">State</label>
+        <select id="state" name="state" class="form-control"  [ngModel]="defaultstate">
+          <option [value]="t" *ngFor="let t of state"  >{{t}}</option>
+          
+        </select>
+      </div>
+    </div>
+      <div class="form-group col-md-2 ">
+        <label for="inputZip">Zip</label>
+        <input type="text" class="form-control" name="zip" id="inputZip" ngModel>
+      </div>
+   
+   
+    <div class="form-group ">
+      <label for="Mobile">Enter Mobile number</label>
+      <input required number  pattern="^[0-9-+\s()]*$" placeholder="+91" maxLength="16"
+      minLength="6" type="tel" name="mobile" id="Mobile" #number="ngModel" ngModel class="form-control">
+      <small class="text-danger" *ngIf="!number.valid && number.touched ">please provide valid number</small>
+</div>
+</div>
+
+<div class="py-2 ">Select gender</div>
+<div class="form-group px-3" *ngFor="let h of gender" style="display: inline-flex; flex-direction: row;">
+  <label for="{{h.id}}" class="custom-control-label" >{{h.value}}</label>
+  <input  type="radio" name="gender" id="{{h.id}}" class="custom-control-input" [ngModel]="defaultgender">
+</div>
+
+    <div class="container py-4">
+    <button type="submit" class="btn btn-danger mx-2" [ngModel]="isSubmitted">Submit</button>
+    <!-- <button type="reset" class="btn btn-warning " (click)="forms.reset({defaultgender:'male'})" style="float: right;">Reset</button> -->
+     <div class="row justify-content-center py-2" *ngIf="isSubmitted">
+      <h2 class=" container text-info">Form Data</h2>
+      <!-- <p>UserName: {{user.address}}</p> -->
+      <p>Email: {{user1.email}}</p>
+      <p>Password: {{user1.password}}</p>
+      <p>Address:{{user1.address}}</p>
+      <p>Address2:{{user1.address2}}</p>
+      <p>City: {{user1.city}}</p>
+      <p>State: {{user1.state}}</p>
+      <p>Zip: {{user1.zip}}</p>
+      <p>Number: {{user1.mobile}}</p>
+      <p>Gender: {{user1.gender}}</p>
+  
+      
+    
+
+    
+  </div>
+    </div>
+  </form>
+        </div>
+    </div>
+</div>

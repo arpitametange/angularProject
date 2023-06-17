@@ -1,0 +1,12 @@
+<p>ngforpractassi works!</p>
+<h1>dropdown</h1>
+ 
+<div class="form-group">
+    <select name="g" id="g" class="form-control" ngModel>
+        <option value="{{g}}"  *ngFor="let g of arrayy ">{{g}}</option>
+    </select>
+</div>
+<div class="form-group" *ngFor="let r of arrayObject">
+    <input type="radio"  name="r" id="{{r.id}}" class="custom-control-input" >
+    <label for="{{r.id}}" class="custom-control-label">{{r.value}}</label>
+</div>

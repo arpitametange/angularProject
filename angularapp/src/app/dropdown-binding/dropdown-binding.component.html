@@ -1,0 +1,114 @@
+<p>dropdown-binding works!</p>
+<!-- 
+<div class="container">
+  <form class="example-form" #myForm="ngForm" (ngSubmit)="OnSubmit(myForm)">
+     <div class="row justify-content-center">
+     
+         <div class="col-md-4 text-left rounded shadow py-5">
+                  <div class="form-group"> 
+                      <h6> Select State</h6>
+                      <mat-form-field  class="example-full-width">
+                  <mat-label for="state" class="ml-5 mb-2"> Select State </mat-label>
+                  <mat-select name="state" (change)="GetDiv()" id="state" [(ngModel)]="stateId" class="form-control">
+                      <mat-option [value]="S.id"  *ngFor="let S of stateArry"> {{S.state}} </mat-option>
+                  </mat-select>
+              </mat-form-field>
+               </div>
+
+               <div class="form-group">
+                  <mat-form-field  class="example-full-width">
+                      <h6> Select Division</h6> -->
+                  <!-- <mat-label for="division" class="ml-5 mb-2"> Select Division </mat-label>
+                  <mat-select placeholder="SelectVillage"name="division" id="division" [(ngModel)]="divisionId" class="form-control">
+                      <mat-option [value]="div.id" *ngFor="let div of divArry"> {{div.state}} </mat-option>
+                  </mat-select>
+              </mat-form-field>
+               </div> -->
+
+
+
+
+
+
+
+
+
+<div class="container" style="display: inline-flex; flex-direction: row;">
+    <div class=""><form action="" #myform="ngForm" (ngSubmit)="OnSubmit(myform)"  > 
+<div><mat-form-field>
+    <mat-label  for="state">Select State</mat-label>
+    <mat-select (change)="GetDiv()" id="state" name="state" class="form-control" [(ngModel)]="stateId">
+      <mat-option  [value]="g.id"  *ngFor="let g of stateArry ">{{g.state}}</mat-option>
+     
+    </mat-select>
+  </mat-form-field>
+  </div>
+       <div><mat-form-field>
+        <mat-label for="division">Select Division</mat-label>
+        <mat-select (change)="gettaluka()" id="division" name="division" class="form-control" [(ngModel)]="divisionId">
+          <mat-option value="{{D.divCode}}" id="{{D.divCode}}" *ngFor="let D of divArry">{{D.division}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      </div>
+
+      <div><mat-form-field>
+        <mat-label>Select an option</mat-label>
+        <mat-select disableRipple>
+          <mat-option value="1">Option 1</mat-option>
+          <mat-option value="2">Option 2</mat-option>
+          <mat-option value="3">Option 3</mat-option>
+        </mat-select>
+      </mat-form-field>
+      </div>
+      <div><mat-form-field>
+        <mat-label>Select an option</mat-label>
+        <mat-select disableRipple>
+          <mat-option value="1">Option 1</mat-option>
+          <mat-option value="2">Option 2</mat-option>
+          <!-- <mat-option value="3">Option 3</mat-option> -->
+        </mat-select>
+      </mat-form-field>
+      </div>
+      <button type="reset">clear</button>
+      <button type="submit" (click)="createtable()">Submit</button>   </form></div>
+
+
+
+    <div>
+        <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Sr.No</th>
+      <th scope="col">State</th>
+      <th scope="col">Division</th>
+      <th scope="col">District</th>
+      <th scope="col">Taluka</th>
+      <th scope="col">Vilage</th>
+      <th scope="col">Edit/Delete</th>
+
+    </tr>
+  </thead>
+  <tbody>
+   
+    <tr>
+      <!-- <th scope="row"  >{{s.id}}</th> -->
+      <!-- <td>{{state.state}}</td> -->
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <th scope="row">
+        <button type="button" (click)="editdata()">edit</button>
+        <button type="button" (click)="removeda()">remove</button>
+      </th>
+    </tr>
+    <tr>
+      <th scope="row" *ngFor="let state of arrray">{{state.stateId}}</th>
+     
+    </tr>
+   
+    
+  </tbody>
+</table>
+    </div>
+</div>

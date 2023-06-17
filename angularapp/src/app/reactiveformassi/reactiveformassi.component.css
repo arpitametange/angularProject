@@ -1,0 +1,56 @@
+#content{
+    
+
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(2,1fr);
+}
+#img{
+    border-radius: 50%;
+    border: 1px solid green;
+    width:165px;
+    height:fit-content;
+    justify-content: center; 
+ float:center;
+ grid-row-start:1 ;
+
+    grid-column-start: 1;
+    grid-column-end: 1;
+}
+.examplecard{
+    width: 30%;
+    display: grid;
+    
+   grid-row-start:1 ;
+   grid-row-end:1 ;
+    grid-column-start: 1;
+    grid-column-end: 1;
+}
+.p{
+    grid-column-start: 1;
+    grid-column-end:1 ; 
+    grid-row-start:2 ;
+
+}
+
+.div{
+    grid-column-start: 4;
+    /* grid-column-end:7;  */
+    grid-row-start:1 ;
+
+}
+#account{
+    grid-column-start: 6;
+    grid-column-end:12; 
+    grid-row-start:1 ;
+}
+
+#formde{
+    display: inline-flex;
+    flex-direction: row;
+}
+#countryPhone{
+    display: inline-flex;
+    flex-direction: row;
+    margin-left: 8px;
+}

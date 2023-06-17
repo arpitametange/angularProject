@@ -1,0 +1,87 @@
+<p>template-drivenform works!</p>
+<div class="container " style="background-color: antiquewhite;">
+    <div class="row  justify-content-center">
+        <div class="col-md-6 shadow ">
+        <h1 style="color: #365584;">Template Registration Form</h1>
+<form  #drivenForm="ngForm" (ngSubmit)="OnSubmit(drivenForm)"  >
+
+
+<div class="form-group col-md-6">
+    <label for="firstName">First Name</label>
+    <input class="form-control" #nameFirst="ngModel" pattern="^[a-zA-Z]+$" ngModel maxlength="5" min="5" required type="text" name="firstName" id="firstName" >
+    <small class="text-danger" *ngIf="!nameFirst.valid && nameFirst.touched">Please enter first name[max 5 char](only characters allow)</small>
+</div>
+
+<div class="form-group col-md-6">
+    <label for="lastName">Last Name</label>
+    <input class="form-control" #lastName="ngModel" pattern="^[a-zA-Z]+$" ngModel maxlength="10" min="5" required type="text" name="lastName" id="lastName" >
+    <small class="text-danger" *ngIf="!lastName.valid && lastName.touched ">Please enter the last name[max 10 char](only characters allow)</small>
+</div>
+
+<div class="form-group col-md-3">
+    <label for="age">Age</label>
+    <input required number type="text" [(ngModel)]="Age" class="form-control" pattern=".{2,8}"  pattern="^[0-9]+$"  name="age" id="age" #age="ngModel">
+    <small class="text-danger" *ngIf=" age.touched && (Age<17 || Age>20) ">Please enter age(Age should be between 17 to 20 & Only numbers are allow)</small>
+
+</div>
+
+
+
+<div class="form-group col-md-4">
+    <label for="email">Email</label>
+    <input email required ngModel class="form-control" #email="ngModel" type="text" name="email" id="email">
+    <small *ngIf="!email.valid && email.touched" class="text-danger">Please enter the valid email</small>
+</div>
+
+<div class="form-group col-md-4">
+    <label for="phone">Phone</label>
+    <input maxlength="10" minlength="10" pattern="^[0-9]+$"  number type="text"   
+     name="number" id="number" #phone="ngModel" class="form-control" ngModel required>
+<small *ngIf="!phone.valid && phone.touched" class="text-danger">Please enter the valid number[max 10](Only numbers are allow)</small>
+</div>
+
+
+<div class="form-group">
+    <label for="city">city</label>
+    <select name="city" id="city" class="form-control" [ngModel]="defaultcity" #select="ngModel">
+        <option [value]="a"  *ngFor="let a of arraycity">{{a}}</option>
+    </select>
+    <small class="text-danger"  *ngIf="!select.valid && select.touched">Please select the dropdown</small>
+</div>
+
+<label>Select gender</label>
+<div class="form-group col-md-3" *ngFor="let g of genderArray"   >
+    <input  value="{{g.value}}" type="radio" name="gender" id="{{g.id}}" [ngModel]="defaultgender" class="custom-control-input" >
+    <label for="{{g.id}}" class="custom-control-label" >{{g.value}}</label>
+
+</div>
+<div class="form-group">
+    <label for="password">Password</label>
+    <input [(ngModel)]="registerArray.password" name="password" ng-pattern="^(?=.*?[A-Z])(?=?[a-z])(?=?[0-9]). {8,16}$"  class="form-control"  type="text" #password="ngModel" id="password" required>
+    <small class="text-danger" *ngIf="!password.valid && password.touched && password==ng-pattern">Please enter valid password</small>
+</div>
+<div class="form-group">
+    <label for="confirmPassword">Confirm Password</label>
+    <input type="text" name="confirmPassword"  #confirmPassword="ngModel" [(ngModel)]="registerArray.confirmPassword" class="form-control"  id="confirmPassword">
+  <small *ngIf="registerArray.password!==registerArray.confirmPassword" class="text-danger">Password and confirm password should  be same</small>
+</div>
+<button type="submit"  class="btn btn-primary my-2">submit</button>
+<div  *ngIf="issubmit">
+ <p>form data</p>
+<p>First Name: {{user.firstName}}</p>
+<p>Last Name: {{user.lastName}}</p>
+<p>Age: {{user.age}}</p>
+<p>Email: {{user.email}}</p>
+<p>Phone:{{user.phone}}</p>
+<p>City:{{user.city}}</p>
+<p>gender:{{user.gender}}</p>
+<p>Password:{{user.password}}</p>
+<p>Confirm Password:{{user.confirmPassword}}</p>
+
+<p></p>
+</div>
+</form>
+        </div>
+    </div>
+
+</div>

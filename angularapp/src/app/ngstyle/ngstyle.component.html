@@ -8,5 +8,8 @@
 
     <p [ngStyle]="{'color':'violet', 'font-size': 'larger', 'font-weight': 'bolder'}">Arpitaaa</p>
     <div *ngFor="let t of array">
-        <p [ngClass]="{'text-success':t.name=='arpita'}">{{t.name}}</p>
+        <p [ngClass]="{'text-success':t.name=='arpita','text-danger':t.name=='ankita'}">{{t.name}}</p>
+        
     </div>
+
+    <h1 [ngStyle]="{'color':'wheat','border':'1px solid green'}">pretty girl</h1>

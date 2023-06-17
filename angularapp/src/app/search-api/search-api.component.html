@@ -1,0 +1,27 @@
+<p>search-api works!</p>
+<div class="container col-md-6"><input type="text"  [(ngModel)]="searchQuery" >
+  <button class="btn btn-dark" (click)="search()">search</button>
+</div>
+<div *ngIf="searchQuery">
+  <table class="table table-light my-3">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Sr.No</th>
+        <th scope="col">Title</th>
+        <th scope="col">WordCount</th>
+        <th scope="col" class="snippet">Snippet</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of newArray let i=index" class="you">
+        <th scope="row">{{i+1}}</th>
+        <td style="text-overflow: ellipsis; max-width: 100ch;">{{t.title}}</td>
+        <td>{{t.wordcount}}</td>
+        <td [innerHTML]="t.snippet" ></td>
+      </tr>
+      
+      
+    </tbody>
+  </table>
+
+</div>

@@ -1,0 +1,78 @@
+<p>reactive-form2 works!</p>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 shadow">
+            <form [formGroup]="reactive2" (ngSubmit)="onsubmit()">
+                <div formGroupName="userDetails">
+                <div class="form-group">
+                    <label for="">username</label>
+                    <input class="form-control col-md-3"  formControlName="user">
+                
+                </div>
+               <div class="form-group">
+                   <label for="lastname">lastname</label>
+                   <input class="form-control" formControlName="lastName">
+                   <small class="text-danger" *ngIf="!reactive2.get('userDetails.lastName').valid && reactive2.get('userDetails.lastName').touched">please enter lastName</small>
+               </div>
+            </div>
+            <div class="form-group">
+                <label for="email">email</label>
+                <input type="text" class="form-control" formControlName="email">
+                <small  class="text-danger" *ngIf="!reactive2.get('email').valid && reactive2.get('email').touched">please enter valid email</small>
+            </div>
+            <div class="form-group">
+                <label for="password">password</label>
+                <input type="password" class="form-control" formControlName="password">
+                <small class="text-danger" *ngIf="!reactive2.get('password').valid && reactive2.get('password').touched">please enter the password</small>
+            </div>
+          
+        <div class="form-group">
+            <div class="custom-radio custom-control" *ngFor="let a of gender"> 
+
+        <input class="custom-control-input" type="radio" value="{{a.value}}" id="{{a.id}}" formControlName="gender">
+        <label for="gender" >{{a.value}}</label>
+
+
+        </div>
+        </div>
+        <div class="form-group" >
+            <select name="course" id="course" >
+                <option [value]="r" *ngFor="let r of course ">{{r}}</option>
+            </select>
+        </div>
+        <div class="form-group" formArrayName="skills">
+            <label for="">skills</label>
+            <ng-container *ngFor="let t of reactive2.get('skills').controls">
+                <input class="form-control" type="text"  >
+               
+            </ng-container>
+           
+            <div class="py-2">
+                <button class="btn btn-primary" (click)="onAddSkils()">
+                    <i>+</i>add skills</button>
+                    <button class="btn btn-primary mx-3" (click)="removeSkills()">
+                        <i>- </i>remove skills</button>
+                 </div>
+        </div>
+        <div formArrayNames="names" class="form-group">
+            <ng-container *ngFor="let h of this.reactive2.get('names').controls; i as index">
+                <input formControlName="{{i}}" type="text" class="form-control">
+            </ng-container>
+<div class="my-2" >
+    <button class="btn btn-primary" (click)="addnames()">add names</button>
+    <button class="btn btn-primary mx-4" (click)="removenames()">remove names</button>
+
+
+</div>
+        </div>
+                <button class="btn btn-success">Submit</button>
+
+            </form>
+        </div> 
+        <div *ngIf="isSubmitted" >
+            <p>name: {{reactive2.get('userDetails.user').value}}</p>
+            <p>lastName: {{reactive2.get('userDetails.lastName').value}}</p>
+
+        </div>
+    </div>
+</div>

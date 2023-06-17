@@ -7,8 +7,9 @@ Dropdown using ngSwitch
   <div class="row">
     <div class="col-md-4">
 
-     <ol  class="list-group list-inline  ">
-  <li ><h3 class="text-danger">Country: </h3><select class="form-control " (change)="get($event)">
+     <ol  class="list-group list-inline">
+  <li><h3 class="text-danger">Country: </h3>
+    <select class="form-control " (change)="get($event)">
     <option  class="dropdown-item"  value="Country">Select Country</option>
     <option  class="dropdown-item" value="India">India</option>
     <option  class="dropdown-item" value="USA">USA</option>
@@ -39,7 +40,42 @@ Dropdown using ngSwitch
 
 
 
+<h1>dropdown second</h1>
+<!-- <div class="container bg-light dropdown" >
+  <div class="row">
+    <div class="col-md-4">
+<div> -->
+<div class="container dropdown">
+  <select class="form-control " (change)="get3($event)">
+    <option  class="dropdown-item"  value="html">html</option>
+    <option  class="dropdown-item" value="css">css</option>
+    <option  class="dropdown-item" value="JavaScript">JavaScript</option>
+  </select>
+</div>
+<div [ngSwitch]="selectedvalue2">
+  <h1>courses</h1>
+  <select name="" id="" *ngSwitchCase="'html'">
+    <option    class="text-danger"   value="California">California</option>
+       <option class="text-danger"   value="Georgia">Georgia</option> 
+       <option class="text-danger"  value="Mississippi">Mississippi</option> 
+       <option class="text-danger"  value="Texas">Texas</option>                          
+</select> 
+<select name="" id="" *ngSwitchCase="'css'">
+  <option  value="course1">course1</option>
+  <option  value="course2">course2</option>
+  <option  value="course3">course3</option>
+  <option  value="course4">course4</option>
 
+</select>
+<select name="" id="" *ngSwitchCase="'JavaScript'">
+  <option  value="course1">course1</option>
+  <option  value="course2">course2</option>
+  <option  value="course3">course3</option>
+  <option  value="course4">course4</option>
 
-<!-- Example split danger button -->
-
+</select>
+</div>
+<!-- </div> -->
+<!-- </div>
+  </div>
+</div> -->

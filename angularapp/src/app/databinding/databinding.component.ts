@@ -6,9 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./databinding.component.css']
 })
 export class DatabindingComponent  {
-
-  
-
   userName: string = 'HarryPotter';
 
 }
