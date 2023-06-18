@@ -15,10 +15,10 @@ export class RapidApiService {
     'X-RapidAPI-Host': 'apidojo-yahoo-finance-v1.p.rapidapi.com'
   })
 
-  header=new HttpHeaders({
-    'X-RapidAPI-Key': 'a356432fb5msh8cc581faab668ccp1f30e1jsn9f9c0cea3104',
-    'X-RapidAPI-Host': 'cricbuzz-cricket.p.rapidapi.com'
-  })
+  // header=new HttpHeaders({
+  //   'X-RapidAPI-Key': 'a356432fb5msh8cc581faab668ccp1f30e1jsn9f9c0cea3104',
+  //   'X-RapidAPI-Host': 'cricbuzz-cricket.p.rapidapi.com'
+  // })
 
   headerhotel=new HttpHeaders({
     'X-RapidAPI-Key': 'a356432fb5msh8cc581faab668ccp1f30e1jsn9f9c0cea3104',
@@ -34,7 +34,7 @@ export class RapidApiService {
 
 
 getDataofCricket():Observable<any>{
-return this.httpClient.get(this.cricketUrl,{headers:this.header})
+return this.httpClient.get(this.cricketUrl)
 }
 
 // getDataofHotel():Observable<any>{
