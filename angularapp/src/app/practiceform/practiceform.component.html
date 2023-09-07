@@ -1,22 +1,29 @@
-<p>practiceform works!</p>
-<form (ngSubmit)="onSubmit(myform)" #myform="ngForm">
-<div class="row">
-<div class="form-group col-md-6">
-<label for="">username</label>
-<input type="text" required name="username" ngModel
-  id="username" class="form-control" #username="ngModel" >
-<small class="text-danger" *ngIf="!username.valid && username.touched">Please enter valid domain userName</small>
+<form  #myform="ngForm" (ngSubmit)="OnSubmit(myform)">
+<div class="form-group">
+  <input type="text" required #name="ngModel" class="form-control" ngModel name="name" id="name">
+  <small *ngIf="name.invalid && name.touched">please enter the name</small>
 </div>
-<div class="form-group col-md-6">
-    <label for="">enter email</label>
-    <input type="text" name="email" id="email" class="form-control" ngModel #email="ngModel" email required >
-    <small *ngIf="!email.valid && email.touched" class="text-danger">required field</small>
-</div>
-</div>
-<button type="submit" >Submit</button>
+<div class="form-group">
+  <input type="email" required #email="ngModel" class="form-control" ngModel id="email" name="email">
+  <small class="text-danger" *ngIf="!email.valid && email.touched">Please enter valid domain email</small>
 
+</div>
+<div class="form-group"><ul *ngFor="let array of arrray"><li>{{array.id}} {{array.name}}</li></ul></div>
+
+<div class="form-group" *ngFor="let gender of genders">
+  <input type="radio" name="gender" id="{{gender.id}}" value="{{gender.value}}" [ngModel]="defaultGenderValue" >
+  <label for="{{gender.id}}">{{gender.value}}</label>
+
+</div>
+
+
+<div class="form-group"> <button type="submit">Submit</button></div>
 </form>
-<div *ngIf="isSubm">
-   email: {{user.Email}}
-   username: {{user.userName}}
+
+<div *ngIf="isSubmitted">
+  {{user.userName}}
+  {{user.Email}}
+  {{user.gender}}
+
+
 </div>

@@ -78,7 +78,6 @@ AfterContentChecked, AfterViewInit, AfterViewChecked ,OnDestroy{
   ngDoCheck(): void {
     console.log('HooksComponent ngDoCheck called.')
     
-    // 
    }
   
 

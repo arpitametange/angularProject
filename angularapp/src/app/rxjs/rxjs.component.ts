@@ -27,8 +27,7 @@ export class RxjsComponent implements OnInit {
     let obs2 = of(4,5,6);
    
      obs1.pipe(
-      mergeMap(value1 => obs2.pipe(map(value2 => value1 +'' + value2)))
-     ).subscribe(res => {
+      mergeMap(value1 => obs2.pipe(map(value2 => value1 +'' + value2)))).subscribe(res => {
       console.log(res);
      })
 

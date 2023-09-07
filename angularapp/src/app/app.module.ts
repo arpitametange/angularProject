@@ -71,6 +71,10 @@ import { HooksComponent } from './hooks/hooks.component';
 import { RandomuserComponent } from './randomuser/randomuser.component';
 import { HeadersInterceptorService } from './inteceptor/headers-interceptor.service';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
+import { PasswordconfirmComponent } from './passwordconfirm/passwordconfirm.component';
+import { ChildComponent } from './child/child.component';
+import { ParentComponent } from './parent/parent.component';
 // import { PageListComponent } from './search-api/page-list/page-list.component';
 // import { HeadersInterceptorService } from './interceptor/headers-interceptor.service';
 
@@ -133,6 +137,10 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     HooksComponent,
     RandomuserComponent,
     RxjsComponent,
+    DropdownComponent,
+    PasswordconfirmComponent,
+    ChildComponent,
+    ParentComponent,
     
     
     // PageListComponent
@@ -172,6 +180,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     }
   ],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { 
   constructor(){

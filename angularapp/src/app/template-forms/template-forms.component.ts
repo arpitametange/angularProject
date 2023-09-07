@@ -18,7 +18,7 @@ export class TemplateFormsComponent implements OnInit {
   isSubmitted=false
  user:User;
 //  @ViewChild ('myform',{static:false}) public resetForm:NgForm;
-
+a
 //  resetMethod(myForm){
 //   myForm.reset()
 //  }

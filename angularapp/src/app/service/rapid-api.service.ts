@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -15,10 +16,7 @@ export class RapidApiService {
     'X-RapidAPI-Host': 'apidojo-yahoo-finance-v1.p.rapidapi.com'
   })
 
-  // header=new HttpHeaders({
-  //   'X-RapidAPI-Key': 'a356432fb5msh8cc581faab668ccp1f30e1jsn9f9c0cea3104',
-  //   'X-RapidAPI-Host': 'cricbuzz-cricket.p.rapidapi.com'
-  // })
+ 
 
   headerhotel=new HttpHeaders({
     'X-RapidAPI-Key': 'a356432fb5msh8cc581faab668ccp1f30e1jsn9f9c0cea3104',
@@ -34,12 +32,43 @@ export class RapidApiService {
 
 
 getDataofCricket():Observable<any>{
-return this.httpClient.get(this.cricketUrl)
-}
+  let  header=new HttpHeaders({
+    'X-RapidAPI-Key': 'a356432fb5msh8cc581faab668ccp1f30e1jsn9f9c0cea3104',
+    'X-RapidAPI-Host': 'cricbuzz-cricket.p.rapidapi.com'
+  })
+  return this.httpClient.get(this.cricketUrl,{headers:header})
+  .pipe(catchError(this.handleError))}
 
 // getDataofHotel():Observable<any>{
 //   return this.httpClient.get(this.hotelurl,{headers:this.headerhotel})
 // }
+
+// getDataCrickbuzz():Observable<any>{
+
+// }
+
+
+
+handleError(error: any) {
+  let errorMessage = ''
+ 
+  if (error.error instanceof ErrorEvent) {
+    // client side error 
+
+    errorMessage = `Error: ${error.error.message}`
+
+    console.log('client side error getDataCrickbuzz', errorMessage);
+  }
+  else {
+    // server-side error
+
+    errorMessage = `Error Code: ${error.status}`
+    console.log('server side error getDataCrickbuzz', errorMessage);
+  }
+
+  return throwError(errorMessage);
+}
+
 
 }
 

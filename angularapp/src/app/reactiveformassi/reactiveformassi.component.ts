@@ -57,7 +57,7 @@ export class ReactiveformassiComponent implements OnInit {
        'confirmPassoword':new FormControl("",[Validators.required,Validators.minLength(5),Validators.maxLength(10)
       ])
 
-    },[passwordMatch('password','confirmPassoword')]
+    }
     
       
     

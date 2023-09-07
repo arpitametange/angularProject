@@ -31,6 +31,7 @@ const routes : Routes = [
   //   {path: 'washingmachine', component: WashingmachineComponent}
   // ]},
   //
+  
   {path: 'product', canActivate: [AuthGuard], loadChildren: './product/products.module#ProductsModule'}, 
    {path: 'womendress', loadChildren: './womendresses/dres.module#DresModule'},
   //  {path: 'addtocard', loadChildren: './addtocard/addcard.module#AddcardModule'},
@@ -41,8 +42,10 @@ const routes : Routes = [
   {path:'rxjs',component:RxjsComponent},
   { path: '**', component: PagenotfoundComponent}
 ];
+//preloading ==>preloadAllModules
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{ preloadingStrategy:PreloadAllModules})],
+  imports: [RouterModule.forRoot(routes,{ preloadingStrategy:PreloadAllModules})], 
   exports: [RouterModule]
 })
 export class AppRoutingModule {

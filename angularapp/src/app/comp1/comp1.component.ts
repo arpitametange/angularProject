@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UtilityService } from '../utility.service';
-
+import { Subject } from 'rxjs';
 @Component({
   selector: 'app-comp1',
   templateUrl: './comp1.component.html',
@@ -8,6 +8,8 @@ import { UtilityService } from '../utility.service';
 })
 export class Comp1Component implements OnInit {
 
+
+  
   userName;
   // inject service
   constructor(private utilityService: UtilityService) { 
@@ -25,4 +27,7 @@ export class Comp1Component implements OnInit {
   this.userName = uname.value;
  this.utilityService.userName.next(uname.value);
   }
+
+ 
+
 }

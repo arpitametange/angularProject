@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { User } from './userpractice';
+import { emit } from 'process';
 
 @Component({
   selector: 'app-practiceform',
@@ -8,18 +9,47 @@ import { User } from './userpractice';
   styleUrls: ['./practiceform.component.css']
 })
 export class PracticeformComponent implements OnInit {
+  user:User
+  isSubmitted=false;
 
+  arrray=[{
+    name:'arpita',
+    id:13
+  },
+  {
+    name:'arpi',
+    id:12
+  },
+  {
+    name:'arpii',
+    id:11
+  }]
+
+  genders = [
+    {
+      id: '1', value: 'Male'
+    },
+    {
+      id: '2', value: 'Female'
+    }
+  ]
+
+  defaultGenderValue='Male'
   constructor() { }
-user:User
-isSubm;
+
   ngOnInit() {
   }
-onSubmit(val:NgForm):void{
- this.isSubm=true
-  console.log(val);
-  this.user=new User
-  this.user.userName=val.value.username
-  this.user.Email=val.value.email
-  
-}
-}
+  OnSubmit(form:NgForm){
+   console.log(form);
+   this.isSubmitted=true
+   this.user=new User()
+    this.user.Email=form.value.email
+    this.user.userName=form.value.name
+    this.user.gender=form.value.gender
+
+    form.reset(this.user)
+    form.control['gender'].setValue('Male')
+   }
+
+  }
+
